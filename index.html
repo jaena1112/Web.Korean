@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--
+This HTML document presents an infographic summarizing a student's joint research report on generative AI.
+It includes key research findings, methodology, results, and conclusions, visualized using Chart.js and HTML/CSS diagrams.
+-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI 콘텐츠: 학습 도구인가 창의력 위협인가?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7F9; /* Light Background */
+            color: #263238; /* Dark Text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .card {
+            background-color: #FFFFFF; /* Card Background */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h1, h2, h3, h4 {
+            color: #2A62B6; /* Primary Blue */
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+
+        .section-title {
+            border-bottom: 2px solid #E0F2FE; /* Supporting Light Blue */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Default height for charts */
+            max-height: 350px; /* Max height for charts */
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 450px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 400px;
+                max-height: 500px;
+            }
+        }
+        .flow-arrow {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #A9A9A9; /* Accent Grey */
+            margin: 1rem auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <header class="text-center py-8 card">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">생성형 AI 콘텐츠, 어떻게 사용되고 있을까?</h1>
+            <p class="text-xl md:text-2xl font-medium text-gray-600 mb-6">학습 도구인가 창의력 위협인가? 청소년의 생각을 듣다</p>
+            <div class="text-sm text-gray-500">
+                <p>작성일: 2025년 5월 26일</p>
+                <p>1학년 2반 2조: 오세영 (1206), 이태율 (1211), 장하은 (1213), 홍재나 (1218)</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2 class="section-title text-3xl">1. 조사 동기와 목적</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl mb-3 text-secondary-teal">조사 동기</h3>
+                        <p class="text-lg">최근 생성형 AI 콘텐츠의 급속한 확산은 학생들의 일상생활과 학습 방식에 큰 변화를 일으킨다. 유튜브, 틱톡 등 다양한 플랫폼을 통해 생성형 AI가 생성한 콘텐츠를 쉽게 접할 수 있으며, 챗봇을 활용한 학습 및 정보 탐색 또한 점차 보편화된다. 이러한 변화 속에서, 고등학생들이 생성형 AI 콘텐츠를 어떻게 인식하고 소비하는지, 그리고 이에 대해 어떠한 생각을 가지고 있는지를 구체적으로 파악할 필요성이 제기되었다.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-3 text-secondary-teal">조사 목적</h3>
+                        <p class="text-lg">본 조사는 미림마이스터고등학교 뉴미디어소프트웨어과 1학년 2반 학생들이 생성형 AI 콘텐츠에 대해 어떤 인식을 가지고 있으며, 어떠한 종류의 콘텐츠를 주로 소비하는지를 알아보고자 기획되었다. 궁극적으로는 학생들의 경험을 통해 AI가 개인의 창의성과 학습 방식에 미치는 영향을 분석하고, 이를 통해 AI 시대에 요구되는 교육 방향 설정과 윤리적 활용 방안을 모색하는 데 목적이 있다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title text-3xl">2. 조사 계획</h2>
+                <div class="text-lg mb-6">
+                    <p><strong class="font-semibold">조사 기간:</strong> 2025년 5월 14일 ~ 5월 15일</p>
+                    <p><strong class="font-semibold">조사 대상:</strong> 미림마이스터고등학교 뉴미디어소프트웨어과 1학년 2반 학생 17명</p>
+                </div>
+
+                <h3 class="text-2xl mb-3 text-secondary-teal">조사 방법</h3>
+                <p class="text-lg mb-6">본 조사는 미림마이스터고등학교 뉴미디어소프트웨어과 1학년 2반 학생들의 생성형 AI 콘텐츠에 대한 인식을 다각적으로 파악하고자 설문조사 및 심층 인터뷰를 병행했다.</p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8 text-center">
+                    <div class="flex flex-col items-center p-6 bg-supporting-light-blue rounded-xl shadow-md w-full md:w-1/2">
+                        <h4 class="text-xl font-semibold mb-2 text-primary-blue">설문조사</h4>
+                        <p class="text-md text-gray-700">미림마이스터고등학교 뉴미디어소프트웨어과 1학년 2반 학생 17명 대상.</p>
+                        <p class="text-md text-gray-700">생성형 AI 콘텐츠 경험, 소비 유형, 인식 등에 대한 객관적인 데이터 수집에 중점을 두었다.</p>
+                    </div>
+                    <div class="md:hidden flow-arrow"></div>
+                    <div class="hidden md:block w-12 h-1 bg-accent-grey rounded-full"></div>
+                    <div class="hidden md:block w-0 h-0 border-l-[10px] border-r-[10px] border-t-[10px] border-solid border-l-transparent border-r-transparent border-t-accent-grey -rotate-90"></div>
+                    <div class="flex flex-col items-center p-6 bg-supporting-light-blue rounded-xl shadow-md w-full md:w-1/2">
+                        <h4 class="text-xl font-semibold mb-2 text-primary-blue">심층 인터뷰</h4>
+                        <p class="text-md text-gray-700">1학년 2반 학생 중 2명 선정하여 개별 인터뷰 진행.</p>
+                        <p class="text-md text-gray-700">설문조사만으로는 얻기 어려웠던 학생들의 구체적인 생각, 경험, 심도 깊은 인식을 파악했다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title text-3xl">3. 조사 결과</h2>
+                <h3 class="text-2xl mb-4 text-secondary-teal">가. 설문 조사 결과</h3>
+
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold mb-3">1) 생성형 AI 사용 빈도</h4>
+                    <p class="text-lg mb-4">생성형 AI의 사용 빈도에 대한 응답 평균은 5점 만점에 4.47점으로, 응답자들이 생성형 AI를 매우 자주 사용하고 있음을 나타낸다. 응답 분포를 살펴보면, 전체 17명 중 12명(70.6%)이 가장 높은 점수인 5점을 선택했으며, 4점은 2명(11.8%), 3점은 2명(11.8%), 2점은 1명(5.9%)으로 나타난다. 이는 대부분의 응답자들이 생성형 AI를 일상적으로 활발하게 사용하고 있음을 알 수 있다.</p>
+                    <div class="chart-container">
+                        <canvas id="chartUsageFrequency"></canvas>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold mb-3">2) 생성형 AI의 학습/과제 수행 도움 정도</h4>
+                    <p class="text-lg mb-4">응답자의 58.8%(10명)가 생성형 인공지능이 학습이나 과제 수행에 도움이 된다고 응답했다. 이는 다수의 학생들이 생성형 AI를 학습 도구로서 긍정적으로 인식하고 있음을 보여준다. 특히, ‘매우 그렇다’(23.5%, 4명)와 ‘그렇다’(58.8%, 10명)를 합하면 전체의 82.3%(14명)에 달하며, 이는 학생 대다수가 생성형 AI의 학습 및 과제 수행에 대한 효용성을 높게 평가하고 있음을 의미한다. 반면, ‘그렇지 않다’고 응답한 비율은 5.9%(1명)에 불과하여, 생성형 AI가 학습이나 과제에 전혀 도움이 되지 않는다고 인식하는 학생은 극히 소수에 그쳤다.</p>
+                    <div class="chart-container">
+                        <canvas id="chartLearningAid"></canvas>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold mb-3">3) 생성형 AI 콘텐츠 정보 신뢰도</h4>
+                    <p class="text-lg mb-4">응답자의 절반 이상(58.8%)이 생성형 AI 콘텐츠의 신뢰도에 대해 ‘보통’이라고 응답해, AI가 제공하는 정보에 대해 중립적이거나 신중한 태도를 보이는 경향이 나타났다. 반면, ‘신뢰하지 않는다’는 응답도 35.3%로 적지 않아, 여전히 생성형 AI 콘텐츠에 대한 비판적 시각과 신뢰 부족 문제가 존재함을 보여준다. ‘매우 신뢰한다’는 응답이 없었던 점도 눈에 띈다.</p>
+                    <div class="chart-container">
+                        <canvas id="chartReliability"></canvas>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold mb-3">4) 할루시네이션 현상 인지 여부</h4>
+                    <p class="text-lg mb-4">응답자의 76.5%가 할루시네이션 현상을 ‘알고 있다’거나 ‘매우 잘 알고 있다’고 응답해, 대부분의 학생들이 생성형 AI의 오류 가능성을 인지하고 있음을 보여준다. 그럼에도 불구하고 앞선 문항에서 나타난 높은 생성형 AI 활용률을 고려할 때, 학생들은 잠재적 오류를 감수하더라도 생성형 AI의 편리함과 효율성 때문에 여전히 이를 적극 활용하고 있는 것으로 해석할 수 있다. 이는 생성형 AI 사용에 있어 비판적 수용 태도가 확산되고 있음을 나타낸다.</p>
+                    <div class="chart-container">
+                        <canvas id="chartHallucinationAwareness"></canvas>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl mb-4 text-secondary-teal">나. 인터뷰 결과</h3>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="p-6 bg-supporting-light-blue rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-3 text-primary-blue">민서연 학생 인터뷰</h4>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>AI 콘텐츠에 대한 이질감: 사람의 창작물보다 개성, 창의성, 표현력이 부족하다고 평가했다. 인간 창작물의 중요성을 강조했다.</li>
+                            <li>AI의 긍정적 측면: 빠른 정보 처리 능력과 학습된 지식을 바탕으로 창의적인 콘텐츠를 신속하게 만들어내는 점을 긍정적으로 보았다.</li>
+                            <li>우려: 사람들이 AI 결과물을 인간의 것보다 우수하게 평가하거나 선호하는 현상이 인간 창의성/사고력을 약화시키고 인간 개입을 줄일 수 있다고 우려했다.</li>
+                            <li>구체적 사례: 도덕 수업 발표 자료(PPT) 제작 시 AI 답변의 정보량 과다, 가독성 저하, 요약 기능 부족으로 수정에 시간이 소요되었다.</li>
+                            <li>일상 활용: 좋아하는 인물이나 말투를 AI에게 입력해 대화하며 즐거움을 추구하고, AI 기반 밈에 대해 "귀엽다"고 긍정적으로 평가했다.</li>
+                            <li>윤리적 우려: AI가 기존 그림체나 사람 얼굴에 필터를 씌워 창작물을 만드는 행위에 대해 저작권/초상권 침해, 허위 정보/가짜 뉴스 유포 가능성을 인식하고 있었다.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-supporting-light-blue rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-3 text-primary-blue">김민채 학생 인터뷰</h4>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>학습 도구로서의 유용성: 정보를 빠르고 쉽게 제공하여 학습 효율을 높이는 데 큰 도움을 받았다고 평가했다.</li>
+                            <li>AI의 한계: AI가 인간의 사고와 경험을 바탕으로 학습된 결과물에 불과하며, 인간의 창의성과 감성을 완전히 대체할 수 없다고 분명히 인식했다.</li>
+                            <li>우려: 생성형 AI 반복 사용 습관이 인간의 사고력과 창의성을 점차 약화시킬 수 있다고 보았으며, 이는 AI 의존이 사회적 문제로 확대될 수 있다는 우려로 이어졌다.</li>
+                            <li>창작 활동에서의 AI 활용: 그림 공모전이나 창작 활동에서 AI를 활용하는 사례에 대해 부정적 시각을 가졌으며, 공정성/창의성 훼손 문제를 지적했다. 제재 방안과 제도적 장치 마련을 주장했다.</li>
+                            <li>윤리적 우려: 부정적 가치나 편향된 사고를 학습한 AI가 사회에 미칠 영향에 대해 깊은 우려를 나타냈으며, AI 개발과 활용에 윤리적 통제와 기준이 필요하다고 강조했다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-6 bg-supporting-light-blue rounded-xl shadow-md">
+                    <h4 class="text-xl font-semibold mb-3 text-primary-blue">인터뷰 내용 종합</h4>
+                    <p class="text-lg mb-4">민서연 학생과 김민채 학생은 생성형 AI에 대해 각각의 경험과 시각을 바탕으로 활용성과 한계, 그리고 윤리적 고민을 함께 제시했다. 두 학생 모두 AI의 정보 제공 능력과 학습 도구로서의 효율성을 긍정적으로 평가하면서도, 그 과정에서 드러나는 창의성과 감성, 표현력의 부족에 대해 공통된 문제의식을 가졌다.</p>
+                    <p class="text-lg mb-4">민서연 학생은 AI가 만든 콘텐츠가 인간의 개성, 감정, 세계관 등을 충분히 담지 못한다고 말하며, 실제 발표 자료 제작 과정에서 AI 답변의 가독성 부족과 수정 시간 증가라는 실용성의 한계를 지적했다. 반면, AI와의 대화나 밈 콘텐츠를 통한 여가 활동은 긍정적으로 평가했다.</p>
+                    <p class="text-lg">김민채 학생은 AI 사용의 습관화가 인간의 사고력과 창의력을 약화시킬 수 있다는 점을 강조하며, 특히 공모전이나 창작 활동에 AI가 개입할 경우 공정성과 사회적 기준 문제가 발생할 수 있음을 우려했다. 그는 AI가 편향된 정보를 재생산하거나 사회적 갈등을 초래할 수 있다는 점도 경고했다. 결국 두 학생 모두 AI의 기술적 유용성과 함께, 그 윤리적 기준, 제도적 대응, 그리고 인간 중심 가치를 놓치지 말아야 한다는 균형 잡힌 태도를 보여주었다.</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title text-3xl">4. 추가 참고자료</h2>
+                <ul class="list-disc list-inside text-lg space-y-3">
+                    <li><strong class="font-semibold">Evaluating Students' Understanding and Perception of Generative AI for Education</strong><br>
+                        <span class="text-gray-700">저자: Aditya Johri 외 | 발행처 및 발행년도: arXiv, 2024</span><br>
+                        <span class="text-gray-600 text-base">주요 내용: 정보기술 계열 대학생의 생성형 AI 활용 경험, 인식, 오해, 교육적 시사점</span>
+                    </li>
+                    <li><strong class="font-semibold">인공지능(AI)에 대한 고등학생 인식 조사</strong><br>
+                        <span class="text-gray-700">저자: 김정현, 이재호 | 발행처 및 발행년도: 한국학술지인용색인(KCI), 2024</span><br>
+                        <span class="text-gray-600 text-base">주요 내용: 고등학생의 인공지능 활용 경험, 인식, 흥미, 교육적 요구 분석</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title text-3xl">5. 결론</h2>
+                <h3 class="text-2xl mb-4 text-secondary-teal">가. 조사 결과 종합 및 주요 발견점</h3>
+                <ul class="list-disc list-inside text-lg space-y-3 mb-8">
+                    <li><strong class="font-semibold">높은 활용률과 긍정적 인식:</strong> 대부분의 학생들이 일상 속에서 자주 활용하며, 학습과 과제 수행에서 특히 큰 도움을 받고 있다고 응답했다.</li>
+                    <li><strong class="font-semibold">정보 신뢰성에 대한 비판적 태도와 할루시네이션 인지:</strong> 학생들은 생성형 AI가 제공하는 정보의 신뢰도에 대해 신중한 태도를 보였으며, 대다수가 할루시네이션(그럴싸한 거짓 정보) 현상의 존재를 인지하고 있었다.</li>
+                    <li><strong class="font-semibold">AI의 한계와 윤리적 문제에 대한 높은 인식:</strong> 인터뷰 결과, 학생들은 AI가 인간의 창의성과 감성을 완전히 대체할 수 없으며, AI 남용 시 발생할 수 있는 창의성 저하, 공정성 문제, 저작권 및 초상권 침해 등 다양한 윤리적 쟁점에 대해 깊이 인식하고 있었다.</li>
+                </ul>
+
+                <h3 class="text-2xl mb-4 text-secondary-teal">나. 조사를 통해 새롭게 알게 된 점 및 느낀 점</h3>
+                <p class="text-lg mb-6">이번 조사를 통해 생성형 AI가 학생들의 일상에 깊숙이 자리 잡았다는 점을 새롭게 확인했다. 학생들은 AI의 장점뿐만 아니라, 그 한계와 문제점까지 잘 인식하고 있었다. 특히, AI가 제공하는 정보의 신뢰성에 대해 비판적으로 접근하고, 할루시네이션 현상에 대해서도 많은 학생들이 인지하고 있다는 점에서, 우리 반 학생들이 AI를 맹목적으로 수용하지 않고 현명하게 활용하는 태도를 지녔음을 확인했다.</p>
+
+                <h3 class="text-2xl mb-4 text-secondary-teal">다. 제언과 우리의 다짐</h3>
+                <p class="text-lg mb-4">앞으로 우리는 생성형 AI를 유용한 도구로 적극 활용하면서도, 다음과 같은 구체적인 노력을 기울일 것이다.</p>
+                <ul class="list-decimal list-inside text-lg space-y-3">
+                    <li>AI에 의존하기보다 우리의 비판적 사고력과 창의적 사고력을 더욱 키워갈 것이다. 스스로 생각하고, 새로운 가치를 만들어내는 힘을 기르겠다.</li>
+                    <li>AI가 제공하는 정보는 반드시 다른 출처와 교차 확인하여 정확성을 확보하고, 저작권, 초상권, 개인 정보 보호 등 윤리적 문제에 대한 인식을 높여 AI를 책임감 있게 활용할 것이다.</li>
+                    <li>AI 기술의 빠른 변화에 맞춰 관련 지식을 지속적으로 학습하고, AI를 교육 및 생활에 효과적으로 통합하는 방안을 탐구하며 AI의 잠재적 위험성을 경계하고 인간 중심의 AI 활용 방안을 모색할 것이다.</li>
+                </ul>
+                <p class="text-lg mt-6 font-semibold text-primary-blue">우리 반은 이처럼 AI의 장점을 현명하게 활용하고, 동시에 인간 고유의 가치를 지키며 AI와 조화롭게 공존하는 현명한 사용자로 성장할 것을 다짐한다.</p>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 text-gray-600 text-sm">
+            <p>&copy; 2025 미림마이스터고등학교 뉴미디어소프트웨어과 1학년 2반</p>
+        </footer>
+    </div>
+
+    <script>
+        // All JavaScript (originally TypeScript) logic for Chart.js and other dynamic elements.
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to wrap labels for Chart.js
+            const wrapLabel = (label, maxCharsPerLine = 16) => {
+                if (!label || typeof label !== 'string') return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxCharsPerLine && currentLine !== '') {
+                        lines.push(currentLine.trim());
+                        currentLine = word + ' ';
+                    } else {
+                        currentLine += word + ' ';
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            // Custom tooltip title callback for Chart.js
+            const customTooltipTitle = (tooltipItems) => {
+                if (tooltipItems.length > 0) {
+                    const item = tooltipItems[0];
+                    return item.label; // Use the original label as the title
+                }
+                return '';
+            };
+
+            // Custom tooltip label callback for Chart.js
+            const customTooltipLabel = (tooltipItem) => {
+                let label = tooltipItem.dataset.label || '';
+                if (label) {
+                    label += ': ';
+                }
+                if (tooltipItem.parsed.y !== null) {
+                    label += tooltipItem.parsed.y + '명 (' + tooltipItem.dataset.data[tooltipItem.dataIndex] + '%)';
+                }
+                return label;
+            };
+
+            // Chart Data for Survey Result 1: Usage Frequency
+            const usageFrequencyData = {
+                labels: ['사용하지 않는다', '사용한 적이 있다', '보통이다', '가끔 사용한다', '자주 사용한다'],
+                counts: [0, 1, 2, 2, 12],
+                percentages: [0, 5.9, 11.8, 11.8, 70.6]
+            };
+            const ctx1 = document.getElementById('chartUsageFrequency').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: usageFrequencyData.labels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '응답자 수',
+                        data: usageFrequencyData.percentages,
+                        backgroundColor: '#2A62B6', // Primary Blue
+                        borderColor: '#2A62B6',
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false // Hide legend as label is clear
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: customTooltipTitle,
+                                label: (context) => {
+                                    const label = context.label.join(' '); // Join wrapped label for tooltip title
+                                    const count = usageFrequencyData.counts[context.dataIndex];
+                                    const percentage = usageFrequencyData.percentages[context.dataIndex];
+                                    return `${label}: ${count}명 (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '비율 (%)'
+                            },
+                            max: 100
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '사용 빈도'
+                            },
+                            ticks: {
+                                autoSkip: false // Prevent skipping labels
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart Data for Survey Result 2: Learning Aid
+            const learningAidData = {
+                labels: ['매우 그렇다', '그렇다', '보통이다', '그렇지 않다', '매우 그렇지 않다'],
+                counts: [4, 10, 2, 1, 0],
+                percentages: [23.5, 58.8, 11.8, 5.9, 0]
+            };
+            const ctx2 = document.getElementById('chartLearningAid').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: learningAidData.labels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '응답자 수',
+                        data: learningAidData.percentages,
+                        backgroundColor: '#4ECDC4', // Secondary Teal
+                        borderColor: '#4ECDC4',
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: customTooltipTitle,
+                                label: (context) => {
+                                    const label = context.label.join(' ');
+                                    const count = learningAidData.counts[context.dataIndex];
+                                    const percentage = learningAidData.percentages[context.dataIndex];
+                                    return `${label}: ${count}명 (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '비율 (%)'
+                            },
+                            max: 100
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '도움 정도'
+                            },
+                            ticks: {
+                                autoSkip: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart Data for Survey Result 3: Reliability
+            const reliabilityData = {
+                labels: ['매우 신뢰한다', '신뢰한다', '보통이다', '신뢰하지 않는다', '매우 신뢰하지 않는다'],
+                counts: [0, 1, 10, 6, 0],
+                percentages: [0.0, 5.9, 58.8, 35.3, 0.0]
+            };
+            const ctx3 = document.getElementById('chartReliability').getContext('2d');
+            new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: reliabilityData.labels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '응답자 수',
+                        data: reliabilityData.percentages,
+                        backgroundColor: '#2A62B6', // Primary Blue
+                        borderColor: '#2A62B6',
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: customTooltipTitle,
+                                label: (context) => {
+                                    const label = context.label.join(' ');
+                                    const count = reliabilityData.counts[context.dataIndex];
+                                    const percentage = reliabilityData.percentages[context.dataIndex];
+                                    return `${label}: ${count}명 (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '비율 (%)'
+                            },
+                            max: 100
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '신뢰도'
+                            },
+                            ticks: {
+                                autoSkip: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart Data for Survey Result 4: Hallucination Awareness
+            const hallucinationAwarenessData = {
+                labels: ['전혀 모른다', '모른다', '보통이다', '알고 있다', '매우 잘 알고 있다'],
+                counts: [2, 0, 2, 7, 6],
+                percentages: [11.8, 0, 11.8, 41.2, 35.3]
+            };
+            const ctx4 = document.getElementById('chartHallucinationAwareness').getContext('2d');
+            new Chart(ctx4, {
+                type: 'bar',
+                data: {
+                    labels: hallucinationAwarenessData.labels.map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '응답자 수',
+                        data: hallucinationAwarenessData.percentages,
+                        backgroundColor: '#4ECDC4', // Secondary Teal
+                        borderColor: '#4ECDC4',
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: customTooltipTitle,
+                                label: (context) => {
+                                    const label = context.label.join(' ');
+                                    const count = hallucinationAwarenessData.counts[context.dataIndex];
+                                    const percentage = hallucinationAwarenessData.percentages[context.dataIndex];
+                                    return `${label}: ${count}명 (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '비율 (%)'
+                            },
+                            max: 100
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '인지도'
+                            },
+                            ticks: {
+                                autoSkip: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <!--
+    인포그래픽 생성이 완료되었다.
+    이 HTML 파일은 학생 공동 조사 보고서의 주요 내용을 시각적으로 요약한다.
+    보고서의 모든 통계 데이터는 Chart.js를 통해 시각화되었으며,
+    조사 방법론은 HTML/CSS 다이어그램으로 표현되었다.
+    모든 텍스트는 보고서의 문체와 어투를 유지하며 한국어로 작성되었다.
+    -->
+</body>
+</html>
